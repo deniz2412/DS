@@ -1,0 +1,126 @@
+warning: in the working copy of '.idea/misc.xml', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'pom.xml', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/main/java/org/DSA/Main.java', LF will be replaced by CRLF the next time Git touches it
+[1mdiff --git a/.idea/misc.xml b/.idea/misc.xml[m
+[1mindex d1eb527..357d260 100644[m
+[1m--- a/.idea/misc.xml[m
+[1m+++ b/.idea/misc.xml[m
+[36m@@ -15,4 +15,7 @@[m
+   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">[m
+     <output url="file://$PROJECT_DIR$/out" />[m
+   </component>[m
+[32m+[m[32m  <component name="ProjectType">[m
+[32m+[m[32m    <option name="id" value="jpab" />[m
+[32m+[m[32m  </component>[m
+ </project>[m
+\ No newline at end of file[m
+[1mdiff --git a/pom.xml b/pom.xml[m
+[1mindex 25e8a59..89a6be3 100644[m
+[1m--- a/pom.xml[m
+[1m+++ b/pom.xml[m
+[36m@@ -13,5 +13,5 @@[m
+         <maven.compiler.target>8</maven.compiler.target>[m
+         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>[m
+     </properties>[m
+[31m-    [m
+[32m+[m
+ </project>[m
+\ No newline at end of file[m
+[1mdiff --git a/src/main/java/org/DSA/Main.java b/src/main/java/org/DSA/Main.java[m
+[1mindex 555c3b6..6478e2e 100644[m
+[1m--- a/src/main/java/org/DSA/Main.java[m
+[1m+++ b/src/main/java/org/DSA/Main.java[m
+[36m@@ -1,5 +1,90 @@[m
+[31m-package org.DSA;public class Main {[m
+[32m+[m[32mpackage org.DSA;[m
+[32m+[m
+[32m+[m[32mimport java.util.Arrays;[m
+[32m+[m
+[32m+[m[32mpublic class Main {[m
+     public static void main(String[] args) {[m
+[31m-        System.out.println("Hello world!");[m
+[32m+[m
+[32m+[m[32m        int[] nums = {-4,-1,0,3,10};[m
+[32m+[m
+[32m+[m[32m        System.out.println(Arrays.toString(sortedSquares(nums)));[m
+[32m+[m
+     }[m
+[32m+[m
+[32m+[m[32m    //Sorting[m
+[32m+[m[32m    public static int[] sortedSquares(int[] nums) {[m
+[32m+[m
+[32m+[m[32m        //square[m
+[32m+[m
+[32m+[m[32m        for(int i=0;i<nums.length;i++){[m
+[32m+[m[32m            nums[i] = nums[i]*nums[i];[m
+[32m+[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        //Sort using quicksort[m
+[32m+[m[32m        int k = nums.length;[m
+[32m+[m[32m        for(int i=0;i<k-1;i++){[m
+[32m+[m[32m            for (int j=0;j<k-i-1;j++){[m
+[32m+[m[32m                if(nums[j]>nums[j+1]){[m
+[32m+[m[32m                    int temp = nums[j];[m
+[32m+[m[32m                    nums[j] = nums[j+1];[m
+[32m+[m[32m                    nums[j+1]=temp;[m
+[32m+[m
+[32m+[m[32m                }[m
+[32m+[m
+[32m+[m[32m            }[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m
+[32m+[m[32m        return nums;[m
+[32m+[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    /*public int findNumbers(int[] nums) {[m
+[32m+[m[32m        int evenCount=0;[m
+[32m+[m[32m        int counter = 0;[m
+[32m+[m[32m        for(int num: nums){[m
+[32m+[m
+[32m+[m
+[32m+[m[32m            while(num!=0){[m
+[32m+[m[32m                num = num/10;[m
+[32m+[m[32m                counter++;[m
+[32m+[m[32m            }[m
+[32m+[m
+[32m+[m
+[32m+[m[32m            if(counter%2==0){[m
+[32m+[m[32m                evenCount++;[m
+[32m+[m[32m            }[m
+[32m+[m
+[32m+[m[32m            counter = 0;[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        return evenCount;[m
+[32m+[m[32m    }*/[m
+[32m+[m[32m  /*  public int findMaxConsecutiveOnes(int[] nums) {[m
+[32m+[m
+[32m+[m[32m        int oneCount=0;[m
+[32m+[m[32m        int result=0;[m
+[32m+[m
+[32m+[m[32m        for(int i = 0; i<nums.length;i++){[m
+[32m+[m[32m            if (nums[i]==0){[m
+[32m+[m[32m                oneCount = 0;[m
+[32m+[m[32m            }[m
+[32m+[m[32m            else {[m
+[32m+[m[32m                oneCount++;[m
+[32m+[m[32m                if (result>oneCount) {[m
+[32m+[m[32m                    continue;[m
+[32m+[m[32m                }[m
+[32m+[m[32m                else{[m
+[32m+[m[32m                    result = oneCount;[m
+[32m+[m[32m                }[m
+[32m+[m
+[32m+[m[32m            }[m
+[32m+[m
+[32m+[m[32m        }[m
+[32m+[m[32m        return result;[m
+[32m+[m[32m    }[m
+[32m+[m[32m*/[m
+[32m+[m
+[32m+[m
+ }[m
+\ No newline at end of file[m
