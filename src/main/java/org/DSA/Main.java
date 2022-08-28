@@ -5,14 +5,24 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
 
-        int[] nums = {-4,-1,0,3,10};
+        //int[] nums = {-4,-1,0,3,10};
 
-        System.out.println(Arrays.toString(sortedSquares(nums)));
+        //LinkedList linkedList = new LinkedList();
+
+        LinkedList linkedList = new LinkedList();
+        java.util.LinkedList<String> list;
+
+        linkedList.addLast(10);
+        linkedList.addLast(20);
+        linkedList.addLast(30);
+
+        linkedList.removeIndexed(1);
+       // System.out.println(Arrays.toString(sortedSquares(nums)));
 
     }
 
     //Sorting
-    public static int[] sortedSquares(int[] nums) {
+  /*  public static int[] sortedSquares(int[] nums) {
 
         //square
 
@@ -38,7 +48,7 @@ public class Main {
 
         return nums;
 
-    }
+    }*/
 
     /*public int findNumbers(int[] nums) {
         int evenCount=0;
